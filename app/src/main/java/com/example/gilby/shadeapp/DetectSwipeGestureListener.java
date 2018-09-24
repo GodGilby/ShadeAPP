@@ -47,10 +47,10 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         {
             if(deltaX > 0)
             {
-                this.activity.displayMessage("izquierda");
+                this.activity.AccionDet("izquierda");
             }else
             {
-                this.activity.displayMessage("derecha");
+                this.activity.AccionDet("derecha");
             }
         }
 
@@ -58,10 +58,10 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         {
             if(deltaY > 0)
             {
-                this.activity.displayMessage("abajo");
+                this.activity.AccionDet("abajo");
             }else
             {
-                this.activity.displayMessage("arriba");
+                this.activity.AccionDet("arriba");
             }
         }
 
@@ -72,14 +72,14 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     // Invoked when single tap screen.
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        this.activity.displayMessage("toque");
+        this.activity.AccionDet("toque");
         return true;
     }
 
     // Invoked when double tap screen.
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        this.activity.displayMessage("Doble");
+        this.activity.AccionDet("Doble");
         return true;
     }
 }

@@ -1,19 +1,25 @@
 package com.example.gilby.shadeapp;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.DigitalClock;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
     // This textview is used to display swipe or tap status info.
-    private TextView textView = null;
-    private ImageView logo = null;
-
+    private TextView Thora,Tminutos,Tformato;
+    private ImageView logo ;
+    private Calendar HActual;
+    private int hora,minutos,segundos ;
     // This is the gesture detector compat instance.
     private GestureDetectorCompat gestureDetectorCompat = null;
 
@@ -22,11 +28,18 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_reloj);
 
-        setTitle("dev2qa.com - Detect Android Swipe Direction Example.");
+        Thora = (TextView) findViewById(R.id.visor_hora);
+        Tminutos = (TextView) findViewById(R.id.visor_minutos);
+        Tformato = (TextView) findViewById(R.id.visor_formato);
 
-        // Get the text view.
-        textView = (TextView)findViewById(R.id.detect_swipe_direction_textview);
         logo = (ImageView)findViewById(R.id.logo1);
+
+        Calendar HActual = Calendar.getInstance();
+
+        Thora.setText(Calendar.getInstance().getTime().toString());
+
+        //TimePickerDialog tiempo = new TimePickerDialog(this,new TimePickerDialog.OnTimeSetListener());
+
         // Create a common gesture listener object.
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
 
@@ -35,26 +48,56 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
+
+        updateTime();
+
+        tiempo.start();
+
+
+
     }
+
+    Thread tiempo = new Thread() {
+        public void run() {
+
+        while (true) {
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("got interrupted!");
+            }
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run(){
+                    updateTime();
+                }
+            });
+
+        }
+
+    }
+    };
+
+
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // Pass activity on touch event to the gesture detector.
         gestureDetectorCompat.onTouchEvent(event);
-        // Return true to tell android OS that event has been consumed, do not pass it to other event listeners.
+        // Return true to tell android OS that event has been consumed, do not pass it to other event list
+        // eners.
         return true;
     }
 
-    public void displayMessage(String message)
+
+    public void AccionDet(String Accion)
     {
 
-        if(textView!=null)
-        {
-            // Display text in the text view.
-            textView.setText(message);
-        }
 
-        if (message == "arriba"){
+
+        if (Accion == "arriba"){
 
             Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
             startActivity(regist);
@@ -63,7 +106,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
         }
 
-        if (message == "abajo"){
+        if (Accion == "abajo"){
 
             Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
             startActivity(regist);
@@ -74,4 +117,17 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
 
     }
+
+    public void updateTime() {
+        String am_pm = "Am";
+        HActual = Calendar.getInstance();
+        if (HActual.get(Calendar.AM_PM) == Calendar.AM)
+            am_pm = "AM";
+        else if (HActual.get(Calendar.AM_PM) == Calendar.PM)
+            am_pm = "PM";
+        Thora.setText(String.valueOf(HActual.get(Calendar.HOUR))+ ":");
+        Tminutos.setText(String.valueOf(HActual.get(Calendar.MINUTE)));
+        Tformato.setText(am_pm);
+    }
 }
+
