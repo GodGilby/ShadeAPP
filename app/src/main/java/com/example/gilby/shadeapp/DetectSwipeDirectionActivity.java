@@ -1,15 +1,18 @@
 package com.example.gilby.shadeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
     // This textview is used to display swipe or tap status info.
     private TextView textView = null;
+    private ImageView logo = null;
 
     // This is the gesture detector compat instance.
     private GestureDetectorCompat gestureDetectorCompat = null;
@@ -23,7 +26,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
         // Get the text view.
         textView = (TextView)findViewById(R.id.detect_swipe_direction_textview);
-
+        logo = (ImageView)findViewById(R.id.logo1);
         // Create a common gesture listener object.
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
 
@@ -44,10 +47,21 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
     public void displayMessage(String message)
     {
+
         if(textView!=null)
         {
             // Display text in the text view.
             textView.setText(message);
         }
+
+        if (message == "arriba"){
+
+            Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
+            startActivity(regist);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+            finish();
+
+        }
+
     }
 }

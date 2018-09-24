@@ -58,10 +58,10 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         {
             if(deltaY > 0)
             {
-                this.activity.displayMessage("Swipe to up");
+                this.activity.displayMessage("abajo");
             }else
             {
-                this.activity.displayMessage("Swipe to down");
+                this.activity.displayMessage("arriba");
             }
         }
 
