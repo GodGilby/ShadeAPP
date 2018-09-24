@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RelajacionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,19 @@
         <activity
             android:name=".Relajacion2Activity"
             android:label="@string/title_activity_relajacion2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Relajacion3Activity"
+            android:label="@string/title_activity_relajacion3"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Relajacion4Activity" />
+        <activity android:name=".Relajacion5Activity"></activity>
     </application>
 
 </manifest>
