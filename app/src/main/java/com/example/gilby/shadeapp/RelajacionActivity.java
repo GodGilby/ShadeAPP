@@ -11,7 +11,7 @@ public class RelajacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_relajacion);
 
-        EsconderNavegacion();
+       // EsconderNavegacion();
     }
     //Funcion para esconder navegacion
     public void EsconderNavegacion(){
