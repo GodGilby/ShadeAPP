@@ -20,7 +20,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detect_swipe_direction);
+        setContentView(R.layout.activity_main_reloj);
 
         setTitle("dev2qa.com - Detect Android Swipe Direction Example.");
 
@@ -58,10 +58,20 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
             Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
             startActivity(regist);
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+            overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
             finish();
 
         }
+
+        if (message == "abajo"){
+
+            Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
+            startActivity(regist);
+            overridePendingTransition(R.anim.slide_in_bot, R.anim.slide_out_top);
+            finish();
+
+        }
+
 
     }
 }

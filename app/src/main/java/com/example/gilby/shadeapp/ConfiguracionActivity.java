@@ -22,6 +22,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent regist = new Intent(ConfiguracionActivity.this, DetectSwipeDirectionActivity.class);
                 startActivity(regist);
+                overridePendingTransition(R.anim.slide_in_bot, R.anim.slide_out_top);
                 finish();
             }
 
