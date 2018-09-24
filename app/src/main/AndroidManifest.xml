@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
         <activity android:name=".DetectSwipeDirectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConfiguracionActivity"></activity>
+        <activity
+            android:name=".Relajacion2Activity"
+            android:label="@string/title_activity_relajacion2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
