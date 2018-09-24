@@ -18,9 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConfiguracionActivity"></activity>
-        <activity
-            android:name=".Relajacion2Activity"
-            android:label="@string/title_activity_relajacion2"></activity>
+        <activity android:name=".RelajacionActivity"></activity>
+        <activity android:name=".Relajacion2Activity"></activity>
     </application>
 
 </manifest>

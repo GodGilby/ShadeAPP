@@ -7,6 +7,7 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.DigitalClock;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,9 +18,8 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
     // This textview is used to display swipe or tap status info.
     private TextView Thora,Tminutos,Tformato;
-    private ImageView logo ;
+    private ImageView logo,Desplegable ;
     private Calendar HActual;
-    private int hora,minutos,segundos ;
     // This is the gesture detector compat instance.
     private GestureDetectorCompat gestureDetectorCompat = null;
 
@@ -33,6 +33,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         Tformato = (TextView) findViewById(R.id.visor_formato);
 
         logo = (ImageView)findViewById(R.id.logo1);
+        Desplegable = (ImageView)findViewById(R.id.boton_opciones);
 
         Calendar HActual = Calendar.getInstance();
 
@@ -52,6 +53,27 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         updateTime();
 
         tiempo.start();
+
+        Desplegable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
+                startActivity(regist);
+                overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
+                finish();
+            }
+
+        });
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(DetectSwipeDirectionActivity.this, RelajacionActivity.class);
+                startActivity(regist);
+                finish();
+            }
+
+        });
 
 
 
@@ -108,7 +130,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
         if (Accion == "abajo"){
 
-            Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
+            Intent regist = new Intent(DetectSwipeDirectionActivity.this, RelajacionActivity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_bot, R.anim.slide_out_top);
             finish();
@@ -126,7 +148,11 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         else if (HActual.get(Calendar.AM_PM) == Calendar.PM)
             am_pm = "PM";
         Thora.setText(String.valueOf(HActual.get(Calendar.HOUR))+ ":");
-        Tminutos.setText(String.valueOf(HActual.get(Calendar.MINUTE)));
+        if(HActual.get(Calendar.MINUTE)>9) {
+            Tminutos.setText(String.valueOf(HActual.get(Calendar.MINUTE)));
+        }else{
+                Tminutos.setText("0" + String.valueOf(HActual.get(Calendar.MINUTE)));
+            }
         Tformato.setText(am_pm);
     }
 }
