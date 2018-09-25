@@ -26,12 +26,8 @@
         <activity android:name=".RelajacionAsustadaActivity" />
         <activity android:name=".PedirUberActivity" />
         <activity android:name=".LlamadaActivity" />
-        <activity android:name=".CancelarActivity"></activity>
-        <activity android:name=".RelajacionAsustadaActivity" />
-        <activity
-            android:name=".ConfiguracionActivity"
-            android:label="@string/title_activity_configuracion"
-            android:theme="@style/AppTheme.NoActionbar"></activity>
+        <activity android:name=".CancelarActivity"/>
+        <activity android:name=".ConfiguracionActivity"/>
     </application>
 
 </manifest>

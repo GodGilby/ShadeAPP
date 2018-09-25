@@ -4,20 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#295E55"
+    android:background="#009999"
     tools:context=".Relajacion2Activity">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageView
 
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/calma"
+        />
     <TextView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:gravity="bottom"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="    Dirijase hacia un \n           espacio poblado o iluminado. \n
-
- Todo va a estar bien"
+        android:textAlignment="center"
+        android:text="Dirijase hacia \n un espacio \n poblado o \niluminado."
 
         android:textColor="#FFFF"
         android:textSize="40dp"
@@ -26,6 +38,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:paddingTop="30dp"
+        android:gravity="top|center"
+        android:textColor="#FFFF"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Todo va a estar bien..."
+        android:layout_weight="1"/>
+
+</LinearLayout>
 
 
 
