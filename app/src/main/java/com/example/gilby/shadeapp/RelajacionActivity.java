@@ -76,7 +76,7 @@ public class RelajacionActivity extends AppCompatActivity {
 
         if (Accion == "arriba"){
 
-            Intent regist = new Intent(RelajacionActivity.this, Relajacion2Activity.class);
+            Intent regist = new Intent(RelajacionActivity.this, RelajacionAsustadaActivity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
             finish();
@@ -85,7 +85,7 @@ public class RelajacionActivity extends AppCompatActivity {
 
         if (Accion == "abajo"){
 
-            Intent regist = new Intent(RelajacionActivity.this, RelajacionAsustadaActivity.class);
+            Intent regist = new Intent(RelajacionActivity.this, Relajacion2Activity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_bot, R.anim.slide_out_top);
             finish();

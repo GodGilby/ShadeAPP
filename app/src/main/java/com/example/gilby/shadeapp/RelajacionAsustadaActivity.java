@@ -68,15 +68,16 @@ public class RelajacionAsustadaActivity extends AppCompatActivity {
 
         if (Accion == "arriba"){
 
-            Intent regist = new Intent(RelajacionAsustadaActivity.this, Relajacion2Activity.class);
-            startActivity(regist);
-            overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
             finish();
 
         }
 
         if (Accion == "abajo"){
 
+
+            Intent regist = new Intent(RelajacionAsustadaActivity.this, Relajacion2Activity.class);
+            startActivity(regist);
+            overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
             finish();
 
         }
