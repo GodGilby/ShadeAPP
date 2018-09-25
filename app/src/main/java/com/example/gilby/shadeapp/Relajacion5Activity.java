@@ -22,7 +22,7 @@ public class Relajacion5Activity extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(Relajacion5Activity.this,Relajacion2Activity.class);
+                Intent intent = new Intent(Relajacion5Activity.this,RelojMainActivity.class);
                 startActivity(intent);
                 finish();
             }
