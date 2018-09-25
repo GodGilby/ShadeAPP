@@ -20,12 +20,17 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     // Source activity that display message in text view.
         private RelojMainActivity activity = null;
         private MenuActivity activity2 = null;
+        private PedirUberActivity activity3 = null;
+        private LlamadaActivity activity4 = null;
+        private CancelarActivity activity5 = null;
 
     // public DetectSwipeDirectionActivity getActivity() { return activity; }
 
     public void setActivity(RelojMainActivity activity) { this.activity = activity; }
     public void setActivity(MenuActivity activity) { this.activity2 = activity; }
-
+    public void setActivity(PedirUberActivity activity) { this.activity3 = activity; }
+    public void setActivity(LlamadaActivity activity) { this.activity4 = activity; }
+    public void setActivity(CancelarActivity activity) { this.activity5 = activity; }
 
     /* This method is invoked when a swipe gesture happened. */
     @Override
@@ -53,6 +58,15 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
             {
                 if(this.activity != null) {
                     this.activity.AccionDet("derecha");
+                }
+                else if(this.activity3 != null) {
+                    this.activity3.AccionDet("derecha");
+                }
+                else if(this.activity4 != null) {
+                    this.activity4.AccionDet("derecha");
+                }
+                else if(this.activity5 != null) {
+                    this.activity5.AccionDet("derecha");
                 }
             }
         }

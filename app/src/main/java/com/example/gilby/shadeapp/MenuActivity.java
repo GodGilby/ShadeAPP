@@ -20,7 +20,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         botonllamada = (ImageView) findViewById(R.id.boton_llamada);
         botonuber = (ImageView)findViewById(R.id.boton_uber);
-        botonconfiguracion = (ImageView)findViewById(R.id.boton_opciones);
+        botonconfiguracion = (ImageView)findViewById(R.id.boton_configuracion);
         botoncancelar = (ImageView)findViewById(R.id.boton_cancelar);
 
         // Create a common gesture listener object.
@@ -31,6 +31,50 @@ public class MenuActivity extends AppCompatActivity {
 
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
+
+        botonuber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(MenuActivity.this, PedirUberActivity.class);
+                startActivity(regist);
+                finish();
+            }
+
+        });
+
+        botonllamada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(MenuActivity.this, LlamadaActivity.class);
+                startActivity(regist);
+                finish();
+            }
+
+        });
+
+        botoncancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(MenuActivity.this, CancelarActivity.class);
+                startActivity(regist);
+                finish();
+            }
+
+        });
+
+        botonconfiguracion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(MenuActivity.this, RelojMainActivity.class);
+                startActivity(regist);
+                finish();
+            }
+
+        });
+
+
+
+
 
 
         botonconfiguracion.setOnClickListener(new View.OnClickListener() {
