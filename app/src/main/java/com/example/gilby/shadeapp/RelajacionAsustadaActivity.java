@@ -7,26 +7,35 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
-public class RelajacionActivity extends AppCompatActivity {
+public class RelajacionAsustadaActivity extends AppCompatActivity {
 
-    private Button botonAbajo;
+    private Button botonAbajo,botonArriba;
     private GestureDetectorCompat gestureDetectorCompat = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relajacion);
+        setContentView(R.layout.activity_relajacion_asustada);
 
         botonAbajo = (Button)findViewById(R.id.buttonSuccess1);
-
-       // EsconderNavegacion();
 
         botonAbajo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent AnimacionR = new Intent(RelajacionActivity.this, Relajacion2Activity.class);
+                Intent AnimacionR = new Intent(RelajacionAsustadaActivity.this, Relajacion2Activity.class);
+                startActivity(AnimacionR);
+                finish();
+            }
+
+        });
+
+        botonArriba = (Button)findViewById(R.id.buttonFail1);
+
+        botonArriba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent AnimacionR = new Intent(RelajacionAsustadaActivity.this, Relajacion2Activity.class);
                 startActivity(AnimacionR);
                 finish();
             }
@@ -34,20 +43,13 @@ public class RelajacionActivity extends AppCompatActivity {
         });
 
         // Create a common gesture listener object.
-        DetectSwipeRelajacion gestureListener = new DetectSwipeRelajacion();
+        DetectSwipeSeguridad gestureListener = new DetectSwipeSeguridad();
 
         // Set activity in the listener.
         gestureListener.setActivity(this);
 
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
-    }
-    //Funcion para esconder navegacion
-    public void EsconderNavegacion(){
-        this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
     }
 
     @Override
@@ -66,7 +68,7 @@ public class RelajacionActivity extends AppCompatActivity {
 
         if (Accion == "arriba"){
 
-            Intent regist = new Intent(RelajacionActivity.this, Relajacion2Activity.class);
+            Intent regist = new Intent(RelajacionAsustadaActivity.this, Relajacion2Activity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
             finish();
@@ -75,9 +77,6 @@ public class RelajacionActivity extends AppCompatActivity {
 
         if (Accion == "abajo"){
 
-            Intent regist = new Intent(RelajacionActivity.this, RelajacionAsustadaActivity.class);
-            startActivity(regist);
-            overridePendingTransition(R.anim.slide_in_bot, R.anim.slide_out_top);
             finish();
 
         }

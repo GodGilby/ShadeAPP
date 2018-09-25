@@ -17,9 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"></activity>
-        <activity android:name=".RelajacionActivity"></activity>
-        <activity android:name=".Relajacion2Activity"></activity>
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".RelajacionActivity" />
+        <activity android:name=".Relajacion2Activity" />
+        <activity android:name=".Relajacion3Activity" />
+        <activity android:name=".Relajacion4Activity" />
+        <activity android:name=".Relajacion5Activity" />
+        <activity android:name=".RelajacionAsustadaActivity"/>
     </application>
 
 </manifest>
