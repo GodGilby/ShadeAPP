@@ -12,7 +12,7 @@
         android:id="@+id/buttonRelax"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:onClick="onTick"
+        android:onClick="didTapButton"
         android:text="Relajacion"
         android:textColor="#ffff"
         android:background="@drawable/circle_button_relax"
