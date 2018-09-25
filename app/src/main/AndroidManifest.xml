@@ -9,20 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionbar">
-        <activity android:name=".DetectSwipeDirectionActivity">
+        <activity android:name=".RelojMainActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConfiguracionActivity" />
+        <activity android:name=".MenuActivity"/>
         <activity android:name=".RelajacionActivity" />
         <activity android:name=".Relajacion2Activity" />
         <activity android:name=".Relajacion3Activity" />
         <activity android:name=".Relajacion4Activity" />
         <activity android:name=".Relajacion5Activity" />
-        <activity android:name=".RelajacionAsustadaActivity"></activity>
+        <activity android:name=".RelajacionAsustadaActivity"/>
     </application>
 
 </manifest>

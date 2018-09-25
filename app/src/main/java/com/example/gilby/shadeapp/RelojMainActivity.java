@@ -1,20 +1,17 @@
 package com.example.gilby.shadeapp;
 
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.DigitalClock;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Calendar;
 
-public class DetectSwipeDirectionActivity extends AppCompatActivity {
+public class RelojMainActivity extends AppCompatActivity {
 
     // This textview is used to display swipe or tap status info.
     private TextView Thora,Tminutos,Tformato;
@@ -57,7 +54,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         Desplegable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
+                Intent regist = new Intent(RelojMainActivity.this, MenuActivity.class);
                 startActivity(regist);
                 overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
                 finish();
@@ -68,7 +65,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regist = new Intent(DetectSwipeDirectionActivity.this, RelajacionActivity.class);
+                Intent regist = new Intent(RelojMainActivity.this, RelajacionActivity.class);
                 startActivity(regist);
                 finish();
             }
@@ -121,7 +118,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
         if (Accion == "arriba"){
 
-            Intent regist = new Intent(DetectSwipeDirectionActivity.this, ConfiguracionActivity.class);
+            Intent regist = new Intent(RelojMainActivity.this, MenuActivity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
             finish();
@@ -130,7 +127,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
         if (Accion == "abajo"){
 
-            Intent regist = new Intent(DetectSwipeDirectionActivity.this, RelajacionActivity.class);
+            Intent regist = new Intent(RelojMainActivity.this, RelajacionActivity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_bot, R.anim.slide_out_top);
             finish();
