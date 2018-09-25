@@ -24,6 +24,7 @@ public class Relajacion2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_relajacion2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -40,14 +41,19 @@ public class Relajacion2Activity extends AppCompatActivity {
             }
         },5000);
 
-        //Timer para el boton
-//        timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                Intent intent = new Intent()
-//            }
-//        });
+
+        CountDownTimer timer2 = new CountDownTimer(30000, 4000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                didTapButton();
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+
 
 
     }
@@ -55,7 +61,10 @@ public class Relajacion2Activity extends AppCompatActivity {
 
 
 
-    public void didTapButton(View view) {
+
+
+
+    public void didTapButton() {
         Button button = (Button) findViewById(R.id.buttonRelax);
         @SuppressLint("ResourceType") final Animation myAnim = AnimationUtils.loadAnimation(this, R.transition.bounce);
 

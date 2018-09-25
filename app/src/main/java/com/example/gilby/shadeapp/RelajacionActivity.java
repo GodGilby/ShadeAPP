@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 public class RelajacionActivity extends AppCompatActivity {
 
-    private Button botonAbajo;
+    private Button botonAbajo,botonArriba;
     private GestureDetectorCompat gestureDetectorCompat = null;
 
     @Override
@@ -20,6 +20,7 @@ public class RelajacionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_relajacion);
 
         botonAbajo = (Button)findViewById(R.id.buttonSuccess1);
+        botonArriba = (Button)findViewById(R.id.buttonFail1);
 
        // EsconderNavegacion();
 
@@ -31,6 +32,15 @@ public class RelajacionActivity extends AppCompatActivity {
                 finish();
             }
 
+        });
+
+        botonArriba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent AnimacionR = new Intent(RelajacionActivity.this, Relajacion2Activity.class);
+                startActivity(AnimacionR);
+                finish();
+            }
         });
 
         // Create a common gesture listener object.
