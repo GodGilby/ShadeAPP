@@ -15,6 +15,7 @@
         android:onClick="didTapButton"
         android:text="Relajacion"
         android:textColor="#ffff"
+        android:enabled="false"
         android:background="@drawable/circle_button_relax"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

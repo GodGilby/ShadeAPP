@@ -12,7 +12,7 @@
         android:id="@+id/buttonRelax"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:onClick="didTapButton"
+        android:enabled="false"
         android:text="Exhala"
         android:textSize="25dp"
         android:fontFamily="serif-monospace"

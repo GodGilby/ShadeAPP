@@ -33,6 +33,16 @@ public class MenuActivity extends AppCompatActivity {
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
 
+        botonconfiguracion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent AnimacionR = new Intent(MenuActivity.this, ConfiguracionActivity.class);
+                startActivity(AnimacionR);
+                finish();
+            }
+
+        });
+
     }
 
     @Override
