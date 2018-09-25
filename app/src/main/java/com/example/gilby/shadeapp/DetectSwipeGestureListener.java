@@ -18,15 +18,14 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     private static int MAX_SWIPE_DISTANCE_Y = 1000;
 
     // Source activity that display message in text view.
-    private DetectSwipeDirectionActivity activity = null;
+        private RelojMainActivity activity = null;
+        private MenuActivity activity2 = null;
 
-    public DetectSwipeDirectionActivity getActivity() {
-        return activity;
-    }
+    // public DetectSwipeDirectionActivity getActivity() { return activity; }
 
-    public void setActivity(DetectSwipeDirectionActivity activity) {
-        this.activity = activity;
-    }
+    public void setActivity(RelojMainActivity activity) { this.activity = activity; }
+    public void setActivity(MenuActivity activity) { this.activity2 = activity; }
+
 
     /* This method is invoked when a swipe gesture happened. */
     @Override
@@ -47,10 +46,14 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         {
             if(deltaX > 0)
             {
-                this.activity.AccionDet("izquierda");
+                if(this.activity != null) {
+                    this.activity.AccionDet("izquierda");
+                }
             }else
             {
-                this.activity.AccionDet("derecha");
+                if(this.activity != null) {
+                    this.activity.AccionDet("derecha");
+                }
             }
         }
 
@@ -58,10 +61,17 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         {
             if(deltaY > 0)
             {
-                this.activity.AccionDet("abajo");
+                if(this.activity != null){
+                    this.activity.AccionDet("abajo");
+                }
+                else if(this.activity2 != null) {
+                    this.activity2.AccionDet("abajo");
+                }
             }else
             {
-                this.activity.AccionDet("arriba");
+                if(this.activity != null) {
+                    this.activity.AccionDet("arriba");
+                }
             }
         }
 
@@ -72,14 +82,18 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     // Invoked when single tap screen.
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        this.activity.AccionDet("toque");
+        if(this.activity != null) {
+            this.activity.AccionDet("toque");
+        }
         return true;
     }
 
     // Invoked when double tap screen.
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        this.activity.AccionDet("Doble");
+        if(this.activity != null) {
+            this.activity.AccionDet("Doble");
+        }
         return true;
     }
 }
