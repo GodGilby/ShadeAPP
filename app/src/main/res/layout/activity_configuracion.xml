@@ -7,107 +7,244 @@
     android:background="#A0A0A0">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#404040"
+        app:popupTheme="@style/AppTheme.NoActionbar.PopupOverlay" />
 
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#404040"
-            app:popupTheme="@style/AppTheme.NoActionbar.PopupOverlay" />
-
-        <ImageView
-            android:id="@+id/boton_configuracion"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/configuracion"/>
+    <ImageView
+        android:id="@+id/boton_configuracion"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/configuracion" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:layout_marginTop="50dp"
-        android:orientation="vertical"
-        >
+        android:gravity="center"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_marginTop="2dp"
             android:layout_weight="1"
-            android:background="#E0E0E0">
-
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/disminuir"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="105dp"
-                tools:ignore="MissingConstraints" />
+            android:background="#E0E0E0"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="60dp"
+                android:layout_gravity="center_horizontal"
                 android:text="Vibraciones"
-                android:textSize="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="71dp" />
+                android:textSize="35dp"
+                />
 
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/aumentar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.954"
-                app:layout_constraintStart_toEndOf="@+id/button"
-                tools:layout_editor_absoluteY="105dp"
-                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#E0E0E0"
+                android:gravity="center"
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/buttonMenosVibraciones"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/disminuir"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="105dp" />
 
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#BDC3C7"
+                        >
+                    </View>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#BDC3C7"></View>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="17dp"
+                        android:background="#BDC3C7">
 
+                    </View>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/aumentar"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
             android:layout_marginTop="2dp"
-            android:background="#E0E0E0">
+            android:layout_weight="1"
+            android:background="#E0E0E0"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sonido"
+                android:textSize="35dp"
+               />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#E0E0E0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonMenosSonido"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/disminuir"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="105dp" />
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#BDC3C7"
+                    >
+                </View>
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#BDC3C7"></View>
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="17dp"
+                    android:background="#BDC3C7">
+
+                </View>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/aumentar"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
             android:layout_marginTop="2dp"
-            android:background="#E0E0E0">
+            android:layout_weight="1"
+            android:background="#E0E0E0"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Brillo de Pantalla"
+                android:textSize="35dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#E0E0E0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonMenosBrillo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/disminuir"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="105dp" />
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#BDC3C7"
+                        >
+                    </View>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#BDC3C7"></View>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="17dp"
+                        android:background="#BDC3C7">
+
+                    </View>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/aumentar"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
 
         </LinearLayout>
-
 
 
     </LinearLayout>
-
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>
