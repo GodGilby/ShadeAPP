@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -78,9 +80,16 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
         seleccionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regist = new Intent(MapaUberActivity.this, ConductorActivity.class);
-                startActivity(regist);
-                finish();
+                if(puntos == 1) {
+                    Intent regist = new Intent(MapaUberActivity.this, ConductorActivity.class);
+                    startActivity(regist);
+                    finish();
+                }
+                else{
+                  //  Toast.makeText(getApplicationContext(), "Eliga su ubicacion", Toast.LENGTH_SHORT).show();
+                    Snackbar snackbar = Snackbar.make(view, "Eliga su ubicacion", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
 
         });
@@ -104,10 +113,10 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
                 requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION
                         , Manifest.permission.INTERNET}, 10);
             }
-
+            UbicacionActual(locationManager.getLastKnownLocation("gps"));
             return;
         }
-
+        UbicacionActual(locationManager.getLastKnownLocation("gps"));
         // locationManager.requestLocationUpdates("gps",0,0,locationListener);
 
     }
@@ -127,8 +136,11 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
 
     public void setlatlng(double lat, double lng) {
 
-        this.lat = lat;
-        this.lng = lng;
+        if(lat ==0 || lng == 0) {
+
+            this.lat = lat;
+            this.lng = lng;
+        }
 
     }
 
@@ -166,6 +178,16 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
         };*/
         Localizar();
         MiUbicacion();
+
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                mMap.clear();
+                mMap.addMarker(new MarkerOptions().position(latLng).title("Partida"));
+                puntos = 1;
+            }
+        });
     }
 
     public void MiUbicacion() {
@@ -190,6 +212,8 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
         if(location != null){
             lat = location.getLatitude();
             lng = location.getLongitude();
+            if(lat ==0 || lng == 0) {
+            }
             LatLng Tu = new LatLng(lat, lng);
             float zoomLevel = 16.0f;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Tu,zoomLevel));

@@ -65,7 +65,7 @@ public class MenuActivity extends AppCompatActivity {
         botonconfiguracion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regist = new Intent(MenuActivity.this, RelojMainActivity.class);
+                Intent regist = new Intent(MenuActivity.this, ConfiguracionActivity.class);
                 startActivity(regist);
                 finish();
             }
@@ -73,19 +73,6 @@ public class MenuActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-        botonconfiguracion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent AnimacionR = new Intent(MenuActivity.this, ConfiguracionActivity.class);
-                startActivity(AnimacionR);
-                finish();
-            }
-
-        });
 
     }
 
@@ -99,10 +86,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    public void AccionDet(String Accion)
-    {
+    public void AccionDet(String Accion) {
 
-        if (Accion == "abajo"){
+        if (Accion == "abajo") {
 
             Intent regist = new Intent(MenuActivity.this, RelojMainActivity.class);
             startActivity(regist);
@@ -111,9 +97,32 @@ public class MenuActivity extends AppCompatActivity {
 
 
         }
-
-
+//        else if (Accion == "toque") {
+//            botonconfiguracion = (ImageView)findViewById(R.id.boton_configuracion);
+//            botoncancelar = (ImageView)findViewById(R.id.boton_cancelar);
+//
+//            botoncancelar.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent regist = new Intent(MenuActivity.this, CancelarActivity.class);
+//                    startActivity(regist);
+//                    finish();
+//                }
+//
+//            });
+//
+//
+//            botonconfiguracion.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent regist = new Intent(MenuActivity.this, ConfiguracionActivity.class);
+//                    startActivity(regist);
+//                    finish();
+//                }
+//
+//            });
+//
+//        }
     }
-
 
 }

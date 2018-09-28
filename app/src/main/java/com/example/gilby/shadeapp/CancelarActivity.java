@@ -35,8 +35,7 @@ public class CancelarActivity extends AppCompatActivity {
     }
 
 
-    public void AccionDet(String Accion)
-    {
+    public void AccionDet(String Accion) {
 
         if (Accion == "derecha"){
 
@@ -44,10 +43,7 @@ public class CancelarActivity extends AppCompatActivity {
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();
-
-
         }
-
 
     }
 
