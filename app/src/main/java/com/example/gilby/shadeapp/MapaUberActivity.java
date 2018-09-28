@@ -2,6 +2,7 @@ package com.example.gilby.shadeapp;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -12,7 +13,10 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +24,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Map;
 
 public class MapaUberActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -29,10 +35,19 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
     //private Marker marcador;
     double lat = 0.0;
     double lng = 0.0;
-    private Button seleccionar;
+    private TextView seleccionar;
     private LocationManager locationManager;
     private LocationListener locationListener;
+    private LinearLayout lugar1,lugar2,lugar3;
+    int puntos = 0;
+    int datos;
     //   FusedLocationProviderClient locationProviderClient;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+                datos  = requestCode;
+
+    }//onActivityResult
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +57,33 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        seleccionar = (Button) findViewById(R.id.boton_seleccionar_posicion);
+        lugar1 = (LinearLayout)findViewById(R.id.vista1);
+        lugar2 = (LinearLayout)findViewById(R.id.vista2);
+        lugar3 = (LinearLayout)findViewById(R.id.vista3);
 
-        //       loadLocation();
+            if (datos == 2){
+                lugar1.setVisibility(View.GONE);
+                lugar2.setVisibility(View.VISIBLE);
+            }
+            else if (datos == 3){
+                lugar1.setVisibility(View.GONE);
+                lugar3.setVisibility(View.VISIBLE);
+            }
+
+
+
+
+        seleccionar = (TextView) findViewById(R.id.boton_seleccionar_posicion);
+
+        seleccionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(MapaUberActivity.this, ConductorActivity.class);
+                startActivity(regist);
+                finish();
+            }
+
+        });
     }
 
 

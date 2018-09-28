@@ -69,9 +69,10 @@
         android:gravity="center"
         android:layout_weight="1"
         android:layout_marginHorizontal="20dp"
-        android:background="#000000"
+        android:background="#202020"
         android:layout_marginBottom="20dp"
-        android:id="@+id/lugar_casa">
+        android:id="@+id/lugar_1"
+        >
 
         <ImageView
             android:layout_width="80dp"
@@ -96,8 +97,9 @@
         android:gravity="center"
         android:layout_weight="1"
         android:layout_marginHorizontal="20dp"
-        android:background="#000000"
-        android:layout_marginBottom="20dp">
+        android:background="#202020"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/lugar_2">
 
         <ImageView
             android:layout_width="80dp"
@@ -124,7 +126,8 @@
         android:layout_weight="1"
         android:layout_marginBottom="60dp"
         android:layout_marginHorizontal="20dp"
-        android:background="#000000">
+        android:background="#202020"
+        android:id="@+id/lugar_3">
 
         <ImageView
             android:layout_width="80dp"
