@@ -35,16 +35,18 @@ public class LlamadaEmergencia extends AppCompatActivity {
         telefonoverde = (Button) findViewById(R.id.telefonoverde);
         llamando = MediaPlayer.create(LlamadaEmergencia.this, R.raw.telephone_ring);
 
-        CountDownTimer timer2 = new CountDownTimer(30000, 4000) {
+        SonidoLlamada();
+
+        CountDownTimer timer2 = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 LlamadaAnimacion();
-                SonidoLlamada();
+
             }
 
             @Override
             public void onFinish() {
-                onPause();
+
 
             }
         }.start();
@@ -61,9 +63,10 @@ public class LlamadaEmergencia extends AppCompatActivity {
         CancelarLlamada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                llamando.stop();
+                llamando.release();
                 Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
                 startActivity(intent);
-                onPause();
                 finish();
 
             }
@@ -83,9 +86,13 @@ public class LlamadaEmergencia extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+                if(llamando.isPlaying()){
+                    llamando.stop();
+                    llamando.release();
+                }
                 Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
                 startActivity(intent);
-                onPause();
+//                onPause();
                 finish();
             }
         }, 10000);
@@ -95,14 +102,14 @@ public class LlamadaEmergencia extends AppCompatActivity {
 
     public void SonidoLlamada() {
         llamando.start();
-
     }
 
-    @Override
-    protected void onPause(){
-        super.onPause();
-        llamando.release();
-    }
+//    @Override
+//    protected void onPause(){
+//        llamando = MediaPlayer.create(LlamadaEmergencia.this, R.raw.telephone_ring);
+//        super.onPause();
+//        llamando.release();
+//    }
 
     public void LlamadaAnimacion() {
         YoYo.with(Techniques.Bounce).duration(1000).repeat(1).playOn(telefonoverde);
