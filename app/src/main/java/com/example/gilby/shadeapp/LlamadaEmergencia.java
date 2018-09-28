@@ -1,6 +1,7 @@
 package com.example.gilby.shadeapp;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         Timer timer;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llamada_emergencia);
         CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
@@ -44,7 +46,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
-        //Timer para el cambio de Activity
+//        Timer para el cambio de Activity
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -54,6 +56,9 @@ public class LlamadaEmergencia extends AppCompatActivity {
                 finish();
             }
         }, 10000);
+
+
+
     }
 
     public boolean onTouchEvent(MotionEvent event) {
