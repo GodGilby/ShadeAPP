@@ -51,7 +51,9 @@
         <activity
             android:name=".MapaUberActivity"
             android:label="@string/title_activity_mapa_uber" />
-        <activity android:name=".ConductorActivity"></activity>
+        <activity android:name=".ConductorActivity" />
+        <activity android:name=".LlamadaEmergencia" />
+        <activity android:name=".LlamadaEmergenciaCancelada"></activity>
     </application>
 
 </manifest>

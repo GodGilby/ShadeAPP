@@ -1,30 +1,42 @@
 package com.example.gilby.shadeapp;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
-public class LlamadaActivity extends AppCompatActivity {
+import java.util.Timer;
+import java.util.TimerTask;
 
+public class LlamadaEmergencia extends AppCompatActivity {
+
+    private LinearLayout CancelarLlamada;
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private LinearLayout emergencia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
+        Timer timer;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_llamada);
-        emergencia = (LinearLayout) findViewById(R.id.ViewEmergencia);
+        setContentView(R.layout.activity_llamada_emergencia);
+        CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
+
+
+        CancelarLlamada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         // Create a common gesture listener object.
-        DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
+        DetectSwipeLlamada gestureListener = new DetectSwipeLlamada();
 
         // Set activity in the listener.
         gestureListener.setActivity(this);
@@ -32,19 +44,18 @@ public class LlamadaActivity extends AppCompatActivity {
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
-        emergencia.setOnClickListener(new View.OnClickListener() {
+        //Timer para el cambio de Activity
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LlamadaActivity.this,LlamadaEmergencia.class);
+            public void run() {
+                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
                 startActivity(intent);
                 finish();
             }
-        });
-
-
+        }, 10000);
     }
 
-    @Override
     public boolean onTouchEvent(MotionEvent event) {
         // Pass activity on touch event to the gesture detector.
         gestureDetectorCompat.onTouchEvent(event);
@@ -53,22 +64,18 @@ public class LlamadaActivity extends AppCompatActivity {
         return true;
     }
 
+    public void AccionDet(String Accion) {
 
-    public void AccionDet(String Accion)
-    {
 
-        if (Accion == "derecha"){
+        if (Accion == "arriba") {
 
-            Intent regist = new Intent(LlamadaActivity.this,MenuActivity.class);
+            Intent regist = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
             startActivity(regist);
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
             finish();
-
 
         }
 
 
     }
-
-
 }
