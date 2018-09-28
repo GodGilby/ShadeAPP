@@ -44,7 +44,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-//                onStop();
+                onPause();
 
             }
         }.start();
@@ -63,7 +63,9 @@ public class LlamadaEmergencia extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
                 startActivity(intent);
+                onPause();
                 finish();
+
             }
         });
 
@@ -83,6 +85,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
                 startActivity(intent);
+                onPause();
                 finish();
             }
         }, 10000);
@@ -93,8 +96,8 @@ public class LlamadaEmergencia extends AppCompatActivity {
     public void SonidoLlamada() {
         llamando.start();
 
-
     }
+
     @Override
     protected void onPause(){
         super.onPause();
