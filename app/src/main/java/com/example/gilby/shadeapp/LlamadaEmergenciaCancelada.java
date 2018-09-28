@@ -33,8 +33,5 @@ public class LlamadaEmergenciaCancelada extends AppCompatActivity {
         },3000);
     }
 
-    protected void onPause(){
-        super.onPause();
-        llamando.release();
-    }
+
 }
