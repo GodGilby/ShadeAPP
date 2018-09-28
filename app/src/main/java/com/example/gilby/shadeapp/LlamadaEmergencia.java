@@ -1,6 +1,7 @@
 package com.example.gilby.shadeapp;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -17,6 +21,8 @@ public class LlamadaEmergencia extends AppCompatActivity {
 
     private LinearLayout CancelarLlamada;
     private GestureDetectorCompat gestureDetectorCompat = null;
+    private Button telefonoverde;
+    private MediaPlayer llamando;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +32,32 @@ public class LlamadaEmergencia extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llamada_emergencia);
         CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
+        telefonoverde = (Button) findViewById(R.id.telefonoverde);
+        llamando = MediaPlayer.create(LlamadaEmergencia.this, R.raw.telephone_ring);
 
+        CountDownTimer timer2 = new CountDownTimer(30000, 4000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                LlamadaAnimacion();
+                SonidoLlamada();
+            }
 
+            @Override
+            public void onFinish() {
+//                onStop();
+
+            }
+        }.start();
+
+        //Metodo de Animacion
+        telefonoverde.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.Bounce).duration(2000).playOn(telefonoverde);
+            }
+        });
+
+        //Metodo para cancelar llamada
         CancelarLlamada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +88,21 @@ public class LlamadaEmergencia extends AppCompatActivity {
         }, 10000);
 
 
+    }
 
+    public void SonidoLlamada() {
+        llamando.start();
+
+
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        llamando.release();
+    }
+
+    public void LlamadaAnimacion() {
+        YoYo.with(Techniques.Bounce).duration(1000).repeat(1).playOn(telefonoverde);
     }
 
     public boolean onTouchEvent(MotionEvent event) {
