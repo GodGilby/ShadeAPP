@@ -27,9 +27,7 @@
         <activity android:name=".PedirUberActivity" />
         <activity android:name=".LlamadaActivity" />
         <activity android:name=".CancelarActivity"/>
-        <activity android:name=".ConfiguracionActivity"
-            android:label=""
-            />
+        <activity android:name=".ConfiguracionActivity"/>
     </application>
 
 </manifest>

@@ -9,4 +9,5 @@
     <string name="title_activity_relajacion2">Relajacion2Activity</string>
     <string name="title_activity_relajacion3">Relajacion3Activity</string>
     <string name="title_activity_configuracion">ConfiguracionActivity</string>
+    <string name="title_activity_mapa_uber">Map</string>
 </resources>
