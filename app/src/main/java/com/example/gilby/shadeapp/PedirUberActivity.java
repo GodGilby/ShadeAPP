@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 public class PedirUberActivity extends AppCompatActivity {
 
-    private LinearLayout Posicionhome;
+    private LinearLayout Posicionhome,Posiciontrabajo,PosicionIntec;
 
     private GestureDetectorCompat gestureDetectorCompat = null;
 
@@ -18,7 +18,9 @@ public class PedirUberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedir_uber);
-        Posicionhome = (LinearLayout)findViewById(R.id.lugar_casa)  ;
+        Posicionhome = (LinearLayout)findViewById(R.id.lugar_1);
+        Posiciontrabajo = (LinearLayout)findViewById(R.id.lugar_2);
+        PosicionIntec = (LinearLayout)findViewById(R.id.lugar_3);
 
         // Create a common gesture listener object.
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
@@ -33,7 +35,31 @@ public class PedirUberActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent regist = new Intent(PedirUberActivity.this, MapaUberActivity.class);
-                startActivity(regist);
+                 regist.putExtra("seleccion","1");
+                startActivityForResult(regist,1);
+
+                finish();
+            }
+
+        });
+        Posiciontrabajo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(PedirUberActivity.this, MapaUberActivity.class);
+                regist.putExtra("seleccion","2");
+                startActivityForResult(regist,2);
+
+                finish();
+            }
+
+        });
+        PosicionIntec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(PedirUberActivity.this, MapaUberActivity.class);
+                regist.putExtra("seleccion","3");
+                startActivityForResult(regist,3);
+
                 finish();
             }
 
