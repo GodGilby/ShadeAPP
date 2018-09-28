@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gilby.shadeapp">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +18,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionbar">
-        <activity android:name=".RelojMainActivity"
-            >
+        <activity android:name=".RelojMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"/>
+        <activity android:name=".MenuActivity" />
         <activity android:name=".RelajacionActivity" />
         <activity android:name=".Relajacion2Activity" />
         <activity android:name=".Relajacion3Activity" />
@@ -26,8 +34,23 @@
         <activity android:name=".RelajacionAsustadaActivity" />
         <activity android:name=".PedirUberActivity" />
         <activity android:name=".LlamadaActivity" />
-        <activity android:name=".CancelarActivity"/>
-        <activity android:name=".ConfiguracionActivity"/>
+        <activity android:name=".CancelarActivity" />
+        <activity android:name=".ConfiguracionActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapaUberActivity"
+            android:label="@string/title_activity_mapa_uber"></activity>
     </application>
 
 </manifest>
