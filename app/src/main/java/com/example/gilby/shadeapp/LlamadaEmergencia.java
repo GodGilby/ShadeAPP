@@ -86,9 +86,14 @@ public class LlamadaEmergencia extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if(llamando.isPlaying()){
-                    llamando.stop();
-                    llamando.release();
+                try {
+                    if(llamando.isPlaying()){
+                        llamando.stop();
+                        llamando.release();
+                    }
+                }
+                catch (IllegalStateException e){
+
                 }
                 Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
                 startActivity(intent);
