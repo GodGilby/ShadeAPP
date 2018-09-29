@@ -58,7 +58,7 @@
                 android:id="@+id/boton_cancelar"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/cancelar"/>
+                android:src="@drawable/banco"/>
 
         </LinearLayout>
 

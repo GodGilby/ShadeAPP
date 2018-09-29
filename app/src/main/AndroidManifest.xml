@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionbar">
-        <activity android:name=".RelojMainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,7 +53,8 @@
             android:label="@string/title_activity_mapa_uber" />
         <activity android:name=".ConductorActivity" />
         <activity android:name=".LlamadaEmergencia" />
-        <activity android:name=".LlamadaEmergenciaCancelada"></activity>
+        <activity android:name=".LlamadaEmergenciaCancelada" />
+        <activity android:name=".RelojMainActivity"/>
     </application>
 
 </manifest>

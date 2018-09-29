@@ -24,6 +24,7 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         private LlamadaActivity activity4 = null;
         private CancelarActivity activity5 = null;
         private ConfiguracionActivity activity6 = null;
+        private ConductorActivity activity7 = null;
 
     // public DetectSwipeDirectionActivity getActivity() { return activity; }
 
@@ -33,6 +34,7 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     public void setActivity(LlamadaActivity activity) { this.activity4 = activity; }
     public void setActivity(CancelarActivity activity) { this.activity5 = activity; }
     public void setActivity(ConfiguracionActivity activity){this.activity6 = activity;}
+    public void setActivity(ConductorActivity activity){this.activity7 = activity;}
 
     /* This method is invoked when a swipe gesture happened. */
     @Override
@@ -72,6 +74,9 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
                 }
                 else if(this.activity6 != null){
                     this.activity6.AccionDet("derecha");
+                }
+                else if(this.activity7 != null){
+                    this.activity7.AccionDet("derecha");
                 }
             }
         }

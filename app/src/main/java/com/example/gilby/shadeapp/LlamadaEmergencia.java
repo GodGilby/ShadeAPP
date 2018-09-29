@@ -14,20 +14,15 @@ import android.widget.LinearLayout;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class LlamadaEmergencia extends AppCompatActivity {
 
     private LinearLayout CancelarLlamada;
     private GestureDetectorCompat gestureDetectorCompat = null;
     private Button telefonoverde;
     private MediaPlayer llamando;
-
+    private CountDownTimer timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        Timer timer;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llamada_emergencia);
@@ -37,7 +32,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
 
         SonidoLlamada();
 
-        CountDownTimer timer2 = new CountDownTimer(10000, 1000) {
+        timer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 LlamadaAnimacion();
@@ -46,6 +41,12 @@ public class LlamadaEmergencia extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                llamando.stop();
+                llamando.release();
+                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
+                startActivity(intent);
+                finish();
+
 
 
             }
@@ -60,17 +61,21 @@ public class LlamadaEmergencia extends AppCompatActivity {
         });
 
         //Metodo para cancelar llamada
-        CancelarLlamada.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                llamando.stop();
-                llamando.release();
-                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
+//        CancelarLlamada.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(timer != null) {
+//                    timer.cancel();
+//                    timer = null;
+//                }
+//                llamando.stop();
+//                llamando.release();
+//                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
+//                startActivity(intent);
+//                finish();
+//
+//            }
+//        });
 
         // Create a common gesture listener object.
         DetectSwipeLlamada gestureListener = new DetectSwipeLlamada();
@@ -80,27 +85,6 @@ public class LlamadaEmergencia extends AppCompatActivity {
 
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
-
-//        Timer para el cambio de Activity
-        timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                try {
-                    if(llamando.isPlaying()){
-                        llamando.stop();
-                        llamando.release();
-                    }
-                }
-                catch (IllegalStateException e){
-
-                }
-                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
-                startActivity(intent);
-//                onPause();
-                finish();
-            }
-        }, 10000);
 
 
     }
@@ -131,12 +115,18 @@ public class LlamadaEmergencia extends AppCompatActivity {
     public void AccionDet(String Accion) {
 
 
-        if (Accion == "arriba") {
+        if (Accion == "abajo") {
 
-            Intent regist = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
-            startActivity(regist);
-            overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bot);
+            if(timer != null) {
+                timer.cancel();
+                timer = null;
+            }
+            llamando.stop();
+            llamando.release();
+            Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
+            startActivity(intent);
             finish();
+
 
         }
 

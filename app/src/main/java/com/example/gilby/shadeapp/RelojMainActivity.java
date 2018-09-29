@@ -14,8 +14,8 @@ import java.util.Calendar;
 public class RelojMainActivity extends AppCompatActivity {
 
     // This textview is used to display swipe or tap status info.
-    private TextView Thora,Tminutos,Tformato;
-    private ImageView logo,Desplegable ;
+    private TextView Thora,Tminutos,Tformato,Desplegable;
+    private ImageView logo;
     private Calendar HActual;
     // This is the gesture detector compat instance.
     private GestureDetectorCompat gestureDetectorCompat = null;
@@ -30,7 +30,7 @@ public class RelojMainActivity extends AppCompatActivity {
         Tformato = (TextView) findViewById(R.id.visor_formato);
 
         logo = (ImageView)findViewById(R.id.logo1);
-        Desplegable = (ImageView)findViewById(R.id.boton_opciones);
+        Desplegable = (TextView) findViewById(R.id.boton_opciones);
 
         Calendar HActual = Calendar.getInstance();
 

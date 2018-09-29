@@ -32,17 +32,20 @@
                 android:text="2 Minutos \n de distancia"
                 android:textSize="60dp"
                 android:textColor="#ffffff"
+                android:layout_marginBottom="10dp"
 
                 />
 
             <TextView
+                android:background="#E0E0E0"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Llega a las 12"
-                android:textSize="40dp"
-                android:textColor="#ffffff"
-
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:text="Llamar Uber"
+                android:id="@+id/boton_llamar_uber"
+                android:textSize="42dp"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="#000000"
                 />
 
         </LinearLayout>
@@ -69,17 +72,17 @@
                     android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hyuandai sonata \n A750233 \N Francisco (4.7)"
+                    android:text="Hyuandai sonata \n A750233 \N Francisco (4.7★)"
                     android:textSize="40dp"/>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:layout_marginHorizontal="70dp"
+                android:layout_marginHorizontal="20dp"
                 android:background="#202020"
                 android:layout_marginBottom="20dp"
                 >
