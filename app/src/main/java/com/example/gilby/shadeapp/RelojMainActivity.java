@@ -65,7 +65,7 @@ public class RelojMainActivity extends AppCompatActivity {
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regist = new Intent(RelojMainActivity.this, RelajacionActivity.class);
+                Intent regist = new Intent(RelojMainActivity.this, Relajacion2Activity.class);
                 startActivity(regist);
                 finish();
             }
