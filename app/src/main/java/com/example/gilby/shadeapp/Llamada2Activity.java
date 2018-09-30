@@ -19,16 +19,16 @@ public class Llamada2Activity extends AppCompatActivity {
 
     private LinearLayout CancelarLlamada;
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private ImageView telefonoverde;
+    private Button telefonoverde;
     private MediaPlayer llamando;
     private CountDownTimer timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_llamada_emergencia);
+        setContentView(R.layout.activity_llamada2);
         CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
-        telefonoverde = (ImageView) findViewById(R.id.telefonoverde);
+        telefonoverde = (Button) findViewById(R.id.telefonoverde);
         llamando = MediaPlayer.create(Llamada2Activity.this, R.raw.telephone_ring);
 
         SonidoLlamada();

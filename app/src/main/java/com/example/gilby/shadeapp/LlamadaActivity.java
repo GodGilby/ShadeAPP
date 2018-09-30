@@ -47,7 +47,7 @@ public class LlamadaActivity extends AppCompatActivity {
         contacto1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LlamadaActivity.this,Llamada2Activity.class);
+                Intent intent = new Intent(LlamadaActivity.this,LlamadaEmergencia.class);
                 startActivity(intent);
                 finish();
             }
@@ -56,7 +56,7 @@ public class LlamadaActivity extends AppCompatActivity {
         contacto2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LlamadaActivity.this,Llamada2Activity.class);
+                Intent intent = new Intent(LlamadaActivity.this,LlamadaEmergencia.class);
                 startActivity(intent);
                 finish();
             }
@@ -65,7 +65,7 @@ public class LlamadaActivity extends AppCompatActivity {
         contacto3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LlamadaActivity.this,Llamada2Activity.class);
+                Intent intent = new Intent(LlamadaActivity.this,LlamadaEmergencia.class);
                 startActivity(intent);
                 finish();
             }

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -18,7 +19,7 @@ public class LlamadaCancelada2Activity extends AppCompatActivity {
 
     private LinearLayout CancelarLlamada;
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private Button telefonoverde;
+    private ImageView telefonoverde;
     private MediaPlayer llamando;
     private CountDownTimer timer;
     @Override
@@ -27,7 +28,7 @@ public class LlamadaCancelada2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llamada_emergencia);
         CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
-        telefonoverde = (Button) findViewById(R.id.telefonoverde);
+        telefonoverde = (ImageView) findViewById(R.id.telefonoverde);
         llamando = MediaPlayer.create(LlamadaCancelada2Activity.this, R.raw.telephone_ring);
 
         SonidoLlamada();
