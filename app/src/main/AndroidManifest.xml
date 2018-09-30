@@ -54,7 +54,12 @@
         <activity android:name=".ConductorActivity" />
         <activity android:name=".LlamadaEmergencia" />
         <activity android:name=".LlamadaEmergenciaCancelada" />
-        <activity android:name=".RelojMainActivity"/>
+        <activity android:name=".RelojMainActivity" />
+        <activity android:name=".CancelarActivity2" />
+        <activity android:name=".CancelarActivity3" />
+        <activity android:name=".CancelarActivity4" />
+        <activity android:name=".Llamada2Activity" />
+        <activity android:name=".LlamadaCancelada2Activity"></activity>
     </application>
 
 </manifest>

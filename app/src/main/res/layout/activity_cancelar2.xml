@@ -7,6 +7,18 @@
     android:background="#E0E0E0">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#404040"
+        app:popupTheme="@style/AppTheme.NoActionbar.PopupOverlay" />
+
+    <ImageView
+        android:id="@+id/boton_configuracion"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/banco" />
 
 
     <LinearLayout
@@ -36,10 +48,16 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
+
+                <TextView
+                    android:id="@+id/AhorroClickeado"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/popularcolor"/>
+                    android:layout_height="150dp"
+                    android:text="Ahorro o Corriente\n **** **** **** 000 "
+                    android:textSize="30dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#FFFFFF"
+                    android:background="@color/colorPrimary"/>
 
 
             </LinearLayout>
@@ -55,14 +73,25 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/huellaDetectada"
+            <TextView
+                android:id="@+id/TarjetaCredito"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/colorPrimary"
-                android:text="Ingresa Huella"
-                android:textSize="60dp"
-                android:textColor="#FFFFFF"/>
+                android:layout_height="150dp"
+                android:paddingTop="20dp"
+                android:text="Tarjeta de Credito Local\n **** **** **** 000 "
+                android:textSize="30dp"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorPrimary"/>
+
+            <Button
+                android:id="@+id/cancelarTarjeta"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="50dp"
+                android:text="Cancelar"
+                android:textSize="30dp"
+                android:background="#CC2323"/>
 
 
 

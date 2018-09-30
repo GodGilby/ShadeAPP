@@ -7,16 +7,21 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class CancelarActivity extends AppCompatActivity {
+public class CancelarActivity3 extends AppCompatActivity {
+
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private Button huella;
+    private Button Acepto, NoAcepto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cancelar);
-        huella = (Button)findViewById(R.id.huellaDetectada);
+        setContentView(R.layout.activity_cancelar3);
+        Acepto = (Button)findViewById(R.id.Acepto);
+        NoAcepto = (Button)findViewById(R.id.NoAcepto);
+
+
 
         // Create a common gesture listener object.
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
@@ -27,13 +32,21 @@ public class CancelarActivity extends AppCompatActivity {
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
-        huella.setOnLongClickListener(new View.OnLongClickListener() {
+        Acepto.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                Intent intent = new Intent(CancelarActivity.this,CancelarActivity2.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(CancelarActivity3.this,CancelarActivity4.class);
                 startActivity(intent);
                 finish();
-                return false;
+            }
+        });
+
+        NoAcepto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CancelarActivity3.this,MenuActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -52,13 +65,12 @@ public class CancelarActivity extends AppCompatActivity {
 
         if (Accion == "derecha"){
 
-            Intent regist = new Intent(CancelarActivity.this, MenuActivity.class);
+            Intent regist = new Intent(CancelarActivity3.this, CancelarActivity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();
         }
 
     }
-
 
 }

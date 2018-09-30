@@ -18,7 +18,7 @@
         android:id="@+id/boton_configuracion"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:src="@drawable/configuracion" />
+        android:src="@drawable/banco" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Sonido"
                 android:textSize="35dp"
-               />
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -140,26 +140,26 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:gravity="center">
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="10dp"
-                    android:background="#BDC3C7"
-                    >
-                </View>
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#BDC3C7"></View>
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="17dp"
-                    android:background="#BDC3C7">
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#BDC3C7"
+                        >
+                    </View>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#BDC3C7"></View>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="17dp"
+                        android:background="#BDC3C7">
 
-                </View>
+                    </View>
                 </LinearLayout>
 
                 <Button

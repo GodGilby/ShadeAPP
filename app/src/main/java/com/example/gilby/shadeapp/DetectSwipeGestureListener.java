@@ -22,9 +22,15 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         private MenuActivity activity2 = null;
         private PedirUberActivity activity3 = null;
         private LlamadaActivity activity4 = null;
+        private Llamada2Activity activity10 = null;
+        private LlamadaCancelada2Activity activity11 = null;
         private CancelarActivity activity5 = null;
         private ConfiguracionActivity activity6 = null;
         private ConductorActivity activity7 = null;
+        private CancelarActivity2 activity8 = null;
+        private CancelarActivity3 activity9 = null;
+        private CancelarActivity4 activity12 = null;
+
 
     // public DetectSwipeDirectionActivity getActivity() { return activity; }
 
@@ -35,6 +41,11 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     public void setActivity(CancelarActivity activity) { this.activity5 = activity; }
     public void setActivity(ConfiguracionActivity activity){this.activity6 = activity;}
     public void setActivity(ConductorActivity activity){this.activity7 = activity;}
+    public void setActivity(CancelarActivity2 activity){this.activity8 = activity;}
+    public void setActivity(CancelarActivity3 activity){this.activity9 = activity;}
+    public void setActivity(Llamada2Activity activity){this.activity10 = activity;}
+    public void setActivity(LlamadaCancelada2Activity activity){this.activity11 = activity;}
+    public void setActivity(CancelarActivity4 activity){this.activity12 = activity;}
 
     /* This method is invoked when a swipe gesture happened. */
     @Override
@@ -59,7 +70,7 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
                     this.activity.AccionDet("izquierda");
                 }
             }else
-            {
+                {
                 if(this.activity != null) {
                     this.activity.AccionDet("derecha");
                 }
@@ -77,6 +88,21 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
                 }
                 else if(this.activity7 != null){
                     this.activity7.AccionDet("derecha");
+                }
+                else if(this.activity8 != null){
+                    this.activity8.AccionDet("derecha");
+                }
+                else if(this.activity9 != null){
+                    this.activity9.AccionDet("derecha");
+                }
+                else if(this.activity10 != null){
+                    this.activity10.AccionDet("derecha");
+                }
+                else if(this.activity11 != null){
+                    this.activity11.AccionDet("derecha");
+                }
+                else if(this.activity12 != null){
+                    this.activity12.AccionDet("derecha");
                 }
             }
         }

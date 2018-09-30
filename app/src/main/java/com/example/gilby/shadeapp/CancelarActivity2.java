@@ -7,16 +7,24 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class CancelarActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
+
+public class CancelarActivity2 extends AppCompatActivity {
+
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private Button huella;
+    private Button cancelar;
+    private TextView AhorroClickeado;
+    private TextView CuentaClickeado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cancelar);
-        huella = (Button)findViewById(R.id.huellaDetectada);
+        setContentView(R.layout.activity_cancelar2);
+        cancelar = (Button)findViewById(R.id.cancelarTarjeta);
+        AhorroClickeado = (TextView)findViewById(R.id.AhorroClickeado);
+        CuentaClickeado = (TextView)findViewById(R.id.TarjetaCredito);
 
         // Create a common gesture listener object.
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
@@ -27,16 +35,36 @@ public class CancelarActivity extends AppCompatActivity {
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
-        huella.setOnLongClickListener(new View.OnLongClickListener() {
+        cancelar.setVisibility(View.GONE);
+
+        AhorroClickeado.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                Intent intent = new Intent(CancelarActivity.this,CancelarActivity2.class);
+            public void onClick(View v) {
+                cancelar.setVisibility(View.GONE);
+                cancelar.setVisibility(View.VISIBLE);
+            }
+        });
+
+        CuentaClickeado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancelar.setVisibility(View.GONE);
+                cancelar.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CancelarActivity2.this,CancelarActivity3.class);
                 startActivity(intent);
                 finish();
-                return false;
             }
         });
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -47,18 +75,16 @@ public class CancelarActivity extends AppCompatActivity {
         return true;
     }
 
-
     public void AccionDet(String Accion) {
 
         if (Accion == "derecha"){
 
-            Intent regist = new Intent(CancelarActivity.this, MenuActivity.class);
+            Intent regist = new Intent(CancelarActivity2.this, CancelarActivity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();
         }
 
     }
-
 
 }

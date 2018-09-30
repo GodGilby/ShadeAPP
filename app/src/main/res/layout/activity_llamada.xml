@@ -66,6 +66,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/Contacto1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="2dp"
@@ -106,6 +107,7 @@
 
 
         <LinearLayout
+            android:id="@+id/Contacto2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="2dp"
@@ -145,6 +147,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/Contacto3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="2dp"

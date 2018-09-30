@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 public class LlamadaActivity extends AppCompatActivity {
 
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private LinearLayout emergencia;
+    private LinearLayout emergencia,contacto1,contacto2,contacto3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,9 @@ public class LlamadaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llamada);
         emergencia = (LinearLayout) findViewById(R.id.ViewEmergencia);
+        contacto1 = (LinearLayout)findViewById(R.id.Contacto1);
+        contacto2 = (LinearLayout)findViewById(R.id.Contacto2);
+        contacto3 = (LinearLayout)findViewById(R.id.Contacto3);
 
         // Create a common gesture listener object.
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
@@ -36,6 +39,33 @@ public class LlamadaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LlamadaActivity.this,LlamadaEmergencia.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        contacto1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LlamadaActivity.this,Llamada2Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        contacto2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LlamadaActivity.this,Llamada2Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        contacto3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LlamadaActivity.this,Llamada2Activity.class);
                 startActivity(intent);
                 finish();
             }
