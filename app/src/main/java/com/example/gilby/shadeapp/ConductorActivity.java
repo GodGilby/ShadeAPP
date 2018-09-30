@@ -29,6 +29,15 @@ public class ConductorActivity extends AppCompatActivity {
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
+        BllamarUber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regist = new Intent(ConductorActivity.this, LlamadaUberActivity.class);
+                startActivity(regist);
+                finish();
+            }
+        });
+
         Bcancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

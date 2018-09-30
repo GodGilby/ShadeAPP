@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 public class RelajacionActivity extends AppCompatActivity {
 
-    private Button botonAbajo,botonArriba;
+    private ImageView botonAbajo,botonArriba;
     private GestureDetectorCompat gestureDetectorCompat = null;
 
     @Override
@@ -19,8 +19,8 @@ public class RelajacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_relajacion);
 
-        botonAbajo = (Button)findViewById(R.id.buttonSuccess1);
-        botonArriba = (Button)findViewById(R.id.buttonFail1);
+        botonAbajo = (ImageView) findViewById(R.id.buttonSuccess1);
+        botonArriba = (ImageView) findViewById(R.id.buttonFail1);
 
        // EsconderNavegacion();
 

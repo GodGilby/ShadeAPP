@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B2F9C8"
-    tools:context=".LlamadaEmergencia">
+    tools:context=".LlamadaUberActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/telefonoverde"
+            android:id="@+id/telefonoverdeU"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
@@ -49,7 +49,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/CancelarLlamada"
+        android:id="@+id/CancelarLlamadaU"
         android:layout_height="match_parent"
         android:layout_marginTop="300dp"
         android:gravity="center"
