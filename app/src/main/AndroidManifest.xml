@@ -60,6 +60,8 @@
         <activity android:name=".CancelarActivity4" />
         <activity android:name=".Llamada2Activity" />
         <activity android:name=".LlamadaCancelada2Activity"></activity>
+        <activity android:name=".LlamadaUberActivity" />
+        <activity android:name=".LlamadaCanceladaUberActivity"></activity>
     </application>
 
 </manifest>

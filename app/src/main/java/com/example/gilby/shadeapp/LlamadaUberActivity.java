@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
-public class LlamadaEmergencia extends AppCompatActivity {
+public class LlamadaUberActivity extends AppCompatActivity {
 
     private LinearLayout CancelarLlamada;
     private GestureDetectorCompat gestureDetectorCompat = null;
@@ -29,7 +29,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
         setContentView(R.layout.activity_llamada_emergencia);
         CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
         telefonoverde = (ImageView) findViewById(R.id.telefonoverde);
-        llamando = MediaPlayer.create(LlamadaEmergencia.this, R.raw.telephone_ring);
+        llamando = MediaPlayer.create(LlamadaUberActivity.this, R.raw.telephone_ring);
 
         SonidoLlamada();
 
@@ -44,7 +44,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
             public void onFinish() {
                 llamando.stop();
                 llamando.release();
-                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
+                Intent intent = new Intent(LlamadaUberActivity.this, LlamadaCanceladaUberActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -61,25 +61,8 @@ public class LlamadaEmergencia extends AppCompatActivity {
             }
         });
 
-        //Metodo para cancelar llamada
-//        CancelarLlamada.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(timer != null) {
-//                    timer.cancel();
-//                    timer = null;
-//                }
-//                llamando.stop();
-//                llamando.release();
-//                Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
-//                startActivity(intent);
-//                finish();
-//
-//            }
-//        });
-
         // Create a common gesture listener object.
-        DetectSwipeLlamada gestureListener = new DetectSwipeLlamada();
+        DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
 
         // Set activity in the listener.
         gestureListener.setActivity(this);
@@ -124,7 +107,7 @@ public class LlamadaEmergencia extends AppCompatActivity {
             }
             llamando.stop();
             llamando.release();
-            Intent intent = new Intent(LlamadaEmergencia.this, LlamadaEmergenciaCancelada.class);
+            Intent intent = new Intent(LlamadaUberActivity.this, LlamadaCanceladaUberActivity.class);
             startActivity(intent);
             finish();
 

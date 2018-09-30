@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="OnClick" />
 
-    <Button
+    <ImageView
         android:id="@+id/buttonRelax2"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -34,7 +34,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/buttonRelax3"
         android:layout_width="20dp"
         android:layout_height="20dp"
@@ -56,7 +56,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonRelax" />
 
-    <Button
+    <ImageView
         android:id="@+id/buttonRelax5"
         android:layout_width="20dp"
         android:layout_height="20dp"
