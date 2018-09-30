@@ -40,6 +40,7 @@ public class CancelarActivity2 extends AppCompatActivity {
         AhorroClickeado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CuentaClickeado.setVisibility(View.GONE);
                 cancelar.setVisibility(View.GONE);
                 cancelar.setVisibility(View.VISIBLE);
             }
@@ -48,6 +49,7 @@ public class CancelarActivity2 extends AppCompatActivity {
         CuentaClickeado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AhorroClickeado.setVisibility(View.GONE);
                 cancelar.setVisibility(View.GONE);
                 cancelar.setVisibility(View.VISIBLE);
             }

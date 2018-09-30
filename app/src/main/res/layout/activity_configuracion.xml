@@ -69,6 +69,7 @@
                     android:layout_gravity="center_vertical"
                     android:gravity="center">
                     <View
+                        android:id="@+id/VibracionView1"
                         android:layout_width="20dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="10dp"
@@ -76,11 +77,13 @@
                         >
                     </View>
                     <View
+                        android:id="@+id/VibracionView2"
                         android:layout_width="20dp"
                         android:layout_height="60dp"
                         android:layout_marginBottom="10dp"
                         android:background="#BDC3C7"></View>
                     <View
+                        android:id="@+id/VibracionView3"
                         android:layout_width="20dp"
                         android:layout_height="80dp"
                         android:layout_marginLeft="10dp"
@@ -91,6 +94,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/buttonMasVibraciones"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/aumentar"
@@ -141,6 +145,7 @@
                     android:layout_gravity="center_vertical"
                     android:gravity="center">
                     <View
+                        android:id="@+id/SonidoView1"
                         android:layout_width="20dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="10dp"
@@ -163,6 +168,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/buttonMasSonido"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/aumentar"
@@ -213,6 +219,7 @@
                     android:layout_gravity="center_vertical"
                     android:gravity="center">
                     <View
+                        android:id="@+id/BrilloView1"
                         android:layout_width="20dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="10dp"
@@ -235,6 +242,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/buttonMasBrillo"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/aumentar"
