@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -18,7 +19,7 @@ public class Llamada2Activity extends AppCompatActivity {
 
     private LinearLayout CancelarLlamada;
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private Button telefonoverde;
+    private ImageView telefonoverde;
     private MediaPlayer llamando;
     private CountDownTimer timer;
     @Override
@@ -27,7 +28,7 @@ public class Llamada2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llamada_emergencia);
         CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
-        telefonoverde = (Button) findViewById(R.id.telefonoverde);
+        telefonoverde = (ImageView) findViewById(R.id.telefonoverde);
         llamando = MediaPlayer.create(Llamada2Activity.this, R.raw.telephone_ring);
 
         SonidoLlamada();
@@ -43,7 +44,7 @@ public class Llamada2Activity extends AppCompatActivity {
             public void onFinish() {
                 llamando.stop();
                 llamando.release();
-                Intent intent = new Intent(Llamada2Activity.this, LlamadaEmergenciaCancelada.class);
+                Intent intent = new Intent(Llamada2Activity.this, LlamadaCancelada2Activity.class);
                 startActivity(intent);
                 finish();
 
@@ -115,7 +116,7 @@ public class Llamada2Activity extends AppCompatActivity {
     public void AccionDet(String Accion) {
 
 
-        if (Accion == "abajo") {
+        if (Accion == "arriba") {
 
             if(timer != null) {
                 timer.cancel();
@@ -123,7 +124,7 @@ public class Llamada2Activity extends AppCompatActivity {
             }
             llamando.stop();
             llamando.release();
-            Intent intent = new Intent(Llamada2Activity.this, LlamadaEmergenciaCancelada.class);
+            Intent intent = new Intent(Llamada2Activity.this, LlamadaCancelada2Activity.class);
             startActivity(intent);
             finish();
 

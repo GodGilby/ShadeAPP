@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 public class LlamadaActivity extends AppCompatActivity {
 
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private LinearLayout emergencia,contacto1,contacto2,contacto3;
+    private LinearLayout emergencia, contacto1,contacto2,contacto3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
