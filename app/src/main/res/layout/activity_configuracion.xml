@@ -7,18 +7,18 @@
     android:background="#A0A0A0">
 
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#404040"
-        app:popupTheme="@style/AppTheme.NoActionbar.PopupOverlay" />
+        >
 
     <ImageView
         android:id="@+id/boton_configuracion"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:src="@drawable/banco" />
+        android:src="@drawable/configuracion" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -149,15 +149,16 @@
                         android:layout_width="20dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="10dp"
-                        android:background="#BDC3C7"
                         >
                     </View>
                     <View
+                        android:id="@+id/SonidoView2"
                         android:layout_width="20dp"
                         android:layout_height="60dp"
                         android:layout_marginBottom="10dp"
                         android:background="#BDC3C7"></View>
                     <View
+                        android:id="@+id/SonidoView3"
                         android:layout_width="20dp"
                         android:layout_height="80dp"
                         android:layout_marginLeft="10dp"
@@ -227,11 +228,13 @@
                         >
                     </View>
                     <View
+                        android:id="@+id/BrilloView2"
                         android:layout_width="20dp"
                         android:layout_height="60dp"
                         android:layout_marginBottom="10dp"
                         android:background="#BDC3C7"></View>
                     <View
+                        android:id="@+id/BrilloView3"
                         android:layout_width="20dp"
                         android:layout_height="80dp"
                         android:layout_marginLeft="10dp"

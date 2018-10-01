@@ -16,13 +16,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         pantalla = (LinearLayout)findViewById(R.id.pantalla_main);
 
-        pantalla.setOnClickListener(new View.OnClickListener() {
+        pantalla.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View view) {
+            public boolean onLongClick(View view) {
                 Intent cambiar = new Intent(MainActivity.this,RelajacionActivity.class);
                 startActivity(cambiar);
                 finish();
+                return false;
             }
         });
+
     }
 }

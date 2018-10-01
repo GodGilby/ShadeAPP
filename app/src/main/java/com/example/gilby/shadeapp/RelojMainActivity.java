@@ -147,9 +147,13 @@ public class RelojMainActivity extends AppCompatActivity {
         if(HActual.get(Calendar.HOUR) > 9 ){//|| HActual.get(Calendar.HOUR) > 12 && HActual.get(Calendar.HOUR) < 22){
             Thora.setText(String.valueOf(HActual.get(Calendar.HOUR)) + ":");
         }
+        else if(HActual.get(Calendar.HOUR) == 0 ){
+            Thora.setText("12:");
+        }
         else{
             Thora.setText("0"+ String.valueOf(HActual.get(Calendar.HOUR)) + ":");
         }
+
         if(HActual.get(Calendar.MINUTE)>9) {
             Tminutos.setText(String.valueOf(HActual.get(Calendar.MINUTE)));
         }else{

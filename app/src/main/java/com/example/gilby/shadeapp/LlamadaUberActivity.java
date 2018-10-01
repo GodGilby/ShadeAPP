@@ -27,8 +27,8 @@ public class LlamadaUberActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llamada_uber);
-        CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamada);
-        telefonoverde = (ImageView) findViewById(R.id.telefonoverde);
+        CancelarLlamada = (LinearLayout) findViewById(R.id.CancelarLlamadaU);
+        telefonoverde = (ImageView) findViewById(R.id.telefonoverdeU);
         llamando = MediaPlayer.create(LlamadaUberActivity.this, R.raw.telephone_ring);
 
         SonidoLlamada();

@@ -89,7 +89,8 @@
             android:layout_height="80dp"
             android:backgroundTint="#519B8F"
             android:textColor="#ffff"
-            android:background="@drawable/disminuirturqueza" />
+            android:background="@drawable/disminuirturqueza"
+            android:layout_marginLeft="4dp"/>
 
         <ImageView
             android:id="@+id/button_play"

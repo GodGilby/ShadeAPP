@@ -197,9 +197,11 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
-                mMap.clear();
-                mMap.addMarker(new MarkerOptions().position(latLng).title("Partida"));
-                puntos = 1;
+                if(empezado == 1) {
+                    mMap.clear();
+                    mMap.addMarker(new MarkerOptions().position(latLng).title("Partida"));
+                    puntos = 1;
+                }
             }
         });
     }
