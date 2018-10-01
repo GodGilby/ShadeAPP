@@ -81,7 +81,7 @@ public class CancelarActivity2 extends AppCompatActivity {
 
         if (Accion == "derecha"){
 
-            Intent regist = new Intent(CancelarActivity2.this, CancelarActivity.class);
+            Intent regist = new Intent(CancelarActivity2.this, MenuActivity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();

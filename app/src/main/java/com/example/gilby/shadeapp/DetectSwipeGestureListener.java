@@ -23,7 +23,7 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         private PedirUberActivity activity3 = null;
         private LlamadaActivity activity4 = null;
         private Llamada2Activity activity10 = null;
-        private LlamadaCancelada2Activity activity11 = null;
+        //private LlamadaCancelada2Activity activity11 = null;
         private CancelarActivity activity5 = null;
         private ConfiguracionActivity activity6 = null;
         private ConductorActivity activity7 = null;
@@ -45,7 +45,7 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     public void setActivity(CancelarActivity2 activity){this.activity8 = activity;}
     public void setActivity(CancelarActivity3 activity){this.activity9 = activity;}
     public void setActivity(Llamada2Activity activity){this.activity10 = activity;}
-    public void setActivity(LlamadaCancelada2Activity activity){this.activity11 = activity;}
+    //public void setActivity(LlamadaCancelada2Activity activity){this.activity11 = activity;}
     public void setActivity(CancelarActivity4 activity){this.activity12 = activity;}
     public void setActivity(LlamadaUberActivity activity){this.activity13 = activity;}
 
@@ -100,9 +100,9 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
                 else if(this.activity10 != null){
                     this.activity10.AccionDet("derecha");
                 }
-                else if(this.activity11 != null){
+                /*else if(this.activity11 != null){
                     this.activity11.AccionDet("derecha");
-                }
+                }*/
                 else if(this.activity12 != null){
                     this.activity12.AccionDet("derecha");
                 }
@@ -122,6 +122,9 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
                 else if(this.activity13 != null) {
                     this.activity13.AccionDet("abajo");
                 }
+                else if(this.activity10 != null) {
+                    this.activity10.AccionDet("abajo");
+                }
             }else
             {
                 if(this.activity != null) {
@@ -129,6 +132,9 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
                 }
                 else if(this.activity13 != null) {
                     this.activity13.AccionDet("arriba");
+                }
+                else if(this.activity10 != null) {
+                    this.activity10.AccionDet("arriba");
                 }
             }
         }
@@ -143,6 +149,10 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         if(this.activity != null) {
             this.activity.AccionDet("toque");
         }
+        else if(this.activity12 != null) {
+            this.activity12.AccionDet("toque");
+        }
+
         return true;
     }
 

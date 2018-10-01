@@ -24,6 +24,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -41,8 +42,9 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
     private LocationManager locationManager;
     private LocationListener locationListener;
     private LinearLayout lugar1,lugar2,lugar3;
-    int puntos = 0;
-    int datos;
+    private int puntos = 0;
+    private int datos;
+    private int empezado = 0;
     //   FusedLocationProviderClient locationProviderClient;
 
     @Override
@@ -113,11 +115,10 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
                 requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION
                         , Manifest.permission.INTERNET}, 10);
             }
-            UbicacionActual(locationManager.getLastKnownLocation("gps"));
             return;
         }
-        UbicacionActual(locationManager.getLastKnownLocation("gps"));
-        // locationManager.requestLocationUpdates("gps",0,0,locationListener);
+        //UbicacionActual(locationManager.getLastKnownLocation("gps"));
+        locationManager.requestLocationUpdates("gps",0,0,locationListener);
 
     }
 
@@ -134,12 +135,17 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
      *
      */
 
-    public void setlatlng(double lat, double lng) {
+    public void setlatlng(Location location) {
+
+        lat = location.getLatitude();
+        lng = location.getLongitude();
 
         if(lat ==0 || lng == 0) {
 
-            this.lat = lat;
-            this.lng = lng;
+            empezado = 0;
+        }
+        else{
+            empezado = 1;
         }
 
     }
@@ -150,15 +156,23 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
         mMap = googleMap;
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-       /* locationListener= new LocationListener() {
+        locationListener= new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                lat = location.getLatitude();
-                lng = location.getLongitude();
+                if(empezado == 0){
+//                lat = location.getLatitude();
+//                lng = location.getLongitude();
+                    setlatlng(location);
+                    MiUbicacion();
+                    UbicacionActual(location);
+//                    lat = location.getLatitude();
+//                    lng = location.getLongitude();
+//                    LatLng Tu = new LatLng(lat, lng);
+//                    float zoomLevel = 16;
+//                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Tu,zoomLevel));
 
-                LatLng Tu = new LatLng(lat, lng);
-                float zoomLevel = 16.0f;
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Tu,zoomLevel));
+                ;}
+
             }
 
             @Override
@@ -175,9 +189,9 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
             public void onProviderDisabled(String s) {
 
             }
-        };*/
+        };
         Localizar();
-        MiUbicacion();
+       // MiUbicacion();
 
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
@@ -203,8 +217,8 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
             return;
         }
         mMap.setMyLocationEnabled(true);
-        mMap.getUiSettings().setMyLocationButtonEnabled(false);
-        UbicacionActual(locationManager.getLastKnownLocation("gps"));
+//        mMap.getUiSettings().setMyLocationButtonEnabled(false);
+       // UbicacionActual(locationManager.getLastKnownLocation("gps"));
     }
 
 
@@ -212,8 +226,6 @@ public class MapaUberActivity extends FragmentActivity implements OnMapReadyCall
         if(location != null){
             lat = location.getLatitude();
             lng = location.getLongitude();
-            if(lat ==0 || lng == 0) {
-            }
             LatLng Tu = new LatLng(lat, lng);
             float zoomLevel = 16.0f;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Tu,zoomLevel));

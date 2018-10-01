@@ -18,7 +18,7 @@ public class LlamadaCanceladaUberActivity extends AppCompatActivity {
         Timer timer;
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_llamada_emergencia_cancelada);
+        setContentView(R.layout.activity_llamada_cancelada_uber);
         llamando = MediaPlayer.create(LlamadaCanceladaUberActivity.this,R.raw.telephone_ring);
 
         //Timer para el cambio de Activity

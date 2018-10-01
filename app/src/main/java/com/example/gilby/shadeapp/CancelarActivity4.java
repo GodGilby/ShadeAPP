@@ -39,11 +39,18 @@ public class CancelarActivity4 extends AppCompatActivity {
 
         if (Accion == "derecha"){
 
-            Intent regist = new Intent(CancelarActivity4.this, MenuActivity.class);
+            Intent regist = new Intent(CancelarActivity4.this, CancelarActivity2.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();
         }
+        if (Accion == "toque"){
+
+            Intent regist = new Intent(CancelarActivity4.this, CancelarActivity2.class);
+            startActivity(regist);
+            finish();
+        }
+
 
     }
 }

@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center_horizontal"
-            android:text="911"
+            android:text="Uber"
             android:textSize="70dp"
             android:textStyle="bold" />
 
