@@ -11,8 +11,6 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-
-
         >
 
         <LinearLayout
@@ -59,6 +57,8 @@
             android:layout_weight="1"
 
             >
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"

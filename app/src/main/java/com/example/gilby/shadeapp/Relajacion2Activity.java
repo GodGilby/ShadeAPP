@@ -88,7 +88,7 @@ public class Relajacion2Activity extends AppCompatActivity {
 
 
         }
-        else if (Accion == "abajo") {
+        else if (Accion == "abajo" || Accion == "arriba") {
 
             if (lock == 0) {
                 lock = 1;

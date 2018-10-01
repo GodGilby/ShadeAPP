@@ -6,18 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".CancelarActivity4">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#404040"
-        app:popupTheme="@style/AppTheme.NoActionbar.PopupOverlay" />
 
-    <ImageView
-        android:id="@+id/boton_configuracion"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:src="@drawable/banco" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:gravity="center"
-        android:layout_marginBottom="50dp">
+        android:layout_marginVertical="50dp">
 
         <ImageView
             android:layout_width="180dp"

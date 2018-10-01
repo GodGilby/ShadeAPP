@@ -44,7 +44,7 @@ public class CancelarActivity3 extends AppCompatActivity {
         NoAcepto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CancelarActivity3.this,MenuActivity.class);
+                Intent intent = new Intent(CancelarActivity3.this,CancelarActivity2.class);
                 startActivity(intent);
                 finish();
             }
@@ -65,7 +65,7 @@ public class CancelarActivity3 extends AppCompatActivity {
 
         if (Accion == "derecha"){
 
-            Intent regist = new Intent(CancelarActivity3.this, CancelarActivity.class);
+            Intent regist = new Intent(CancelarActivity3.this, CancelarActivity2.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();
