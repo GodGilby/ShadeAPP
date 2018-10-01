@@ -65,7 +65,7 @@ public class RelojMainActivity extends AppCompatActivity {
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regist = new Intent(RelojMainActivity.this, Relajacion2Activity.class);
+                Intent regist = new Intent(RelojMainActivity.this, Relajacion3Activity.class);
                 startActivity(regist);
                 finish();
             }
@@ -127,7 +127,7 @@ public class RelojMainActivity extends AppCompatActivity {
 
         if (Accion == "abajo"){
 
-            Intent regist = new Intent(RelojMainActivity.this, RelajacionActivity.class);
+            Intent regist = new Intent(RelojMainActivity.this, Relajacion3Activity.class);
             startActivity(regist);
             overridePendingTransition(R.anim.slide_in_bot, R.anim.slide_out_top);
             finish();

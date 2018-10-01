@@ -8,63 +8,122 @@
     tools:context=".Relajacion2Activity">
 
 
-    <Button
-        android:id="@+id/buttonRelax"
+    <TextView
+        android:id="@+id/boton_relajacion"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:enabled="false"
-        android:text="Inhala"
-        android:textSize="40dp"
-        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Respira \n 1:00"
         android:textColor="#ffff"
+        android:textSize="36dp"
         android:background="@drawable/circle_button_relax"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-    <Button
-        android:id="@+id/buttonRelax2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textColor="#ffff"
-        android:background="@drawable/circle_button_relax"
-        app:layout_constraintBottom_toTopOf="@id/buttonRelax"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top|center">
 
-    <Button
-        android:id="@+id/buttonRelax3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:textColor="#ffff"
-        android:background="@drawable/circle_button_relax"
-        app:layout_constraintBottom_toTopOf="@id/buttonRelax2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
 
-    <Button
-        android:id="@+id/buttonRelax4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textColor="#ffff"
-        android:background="@drawable/circle_button_relax"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonRelax" />
+        >
 
-    <Button
-        android:id="@+id/buttonRelax5"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:textColor="#ffff"
-        android:background="@drawable/circle_button_relax"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonRelax4" />
+        <ImageView
+            android:id="@+id/buttonazulito1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textColor="#ffff"
+            android:background="@drawable/circle_button_relax"
+            android:layout_marginBottom="20dp"
+            />
+
+    <ImageView
+        android:id="@+id/button_mas"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/aumentarturqueza"
+        android:backgroundTint="#519B8F"
+         />
+
+        <ImageView
+            android:id="@+id/decoracion_circular"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="@drawable/circle_button_relax"
+            android:visibility="gone"
+            />
+
+
+
+    </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom|center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+
+        >
+
+        <ImageView
+            android:id="@+id/button_menos"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#519B8F"
+            android:textColor="#ffff"
+            android:background="@drawable/disminuirturqueza" />
+
+        <ImageView
+            android:id="@+id/button_play"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:textColor="#ffff"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/play"
+            android:visibility="gone"
+
+             />
+
+        <ImageView
+            android:id="@+id/button_pause"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:textColor="#ffff"
+            android:background="@drawable/pausa"
+            android:visibility="gone"
+             />
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:id="@+id/buttonazulito5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textColor="#ffff"
+            android:background="@drawable/circle_button_relax"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>
+

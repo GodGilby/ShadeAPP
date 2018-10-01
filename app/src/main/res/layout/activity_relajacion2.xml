@@ -8,20 +8,20 @@
     tools:context=".Relajacion2Activity">
 
 
-    <Button
-        android:id="@+id/buttonRelax"
+    <TextView
+        android:id="@+id/buttonRelajando"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:onClick="didTapButton"
-        android:text="Relajacion"
+        android:gravity="center"
+        android:text="Respira"
         android:textColor="#ffff"
-        android:enabled="false"
+        android:textSize="36dp"
         android:background="@drawable/circle_button_relax"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="OnClick" />
+        />
 
     <ImageView
         android:id="@+id/buttonRelax2"
@@ -29,13 +29,13 @@
         android:layout_height="60dp"
         android:textColor="#ffff"
         android:background="@drawable/circle_button_relax"
-        app:layout_constraintBottom_toTopOf="@id/buttonRelax"
+        app:layout_constraintBottom_toTopOf="@id/buttonRelajando"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/buttonRelax3"
+        android:id="@+id/buttonazulito1"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:textColor="#ffff"
@@ -54,10 +54,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonRelax" />
+        app:layout_constraintTop_toBottomOf="@id/buttonRelajando" />
 
     <ImageView
-        android:id="@+id/buttonRelax5"
+        android:id="@+id/buttonazulito5"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:textColor="#ffff"

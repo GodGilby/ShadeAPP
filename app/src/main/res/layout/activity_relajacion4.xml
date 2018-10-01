@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#73CEC2"
-    tools:context=".Relajacion2Activity">
-
+    tools:context=".Relajacion4Activity"
+    android:id="@+id/pantalla_buen_trabajo">
 
     <Button
-        android:id="@+id/buttonRelax"
+        android:id="@+id/buttonRelajacion4"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:enabled="false"
-        android:text="Exhala"
-        android:textSize="25dp"
-        android:fontFamily="serif-monospace"
+        android:text="! buen Trabajo!"
+        android:textSize="28dp"
+        android:fontFamily="serif"
         android:textColor="#ffff"
         android:background="@drawable/circle_button_relax"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,23 +23,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonRelax2"
+        android:id="@+id/buttonRelajacionmediano"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:textColor="#ffff"
         android:background="@drawable/circle_button_relax"
-        app:layout_constraintBottom_toTopOf="@id/buttonRelax"
+        app:layout_constraintBottom_toTopOf="@id/buttonRelajacion4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonRelax3"
+        android:id="@+id/buttonazulito1"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:textColor="#ffff"
         android:background="@drawable/circle_button_relax"
-        app:layout_constraintBottom_toTopOf="@id/buttonRelax2"
+        app:layout_constraintBottom_toTopOf="@id/buttonRelajacionmediano"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,10 +53,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonRelax" />
+        app:layout_constraintTop_toBottomOf="@id/buttonRelajacion4" />
+
 
     <Button
-        android:id="@+id/buttonRelax5"
+        android:id="@+id/buttonazulito5"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:textColor="#ffff"
